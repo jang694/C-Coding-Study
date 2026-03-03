@@ -5,7 +5,7 @@
 #include <string.h>
 typedef struct student {
 	char name[20];
-	int score[3]; //score 0:±¹¾î, 1:¿µ¾î, 2:¼öÇÐ
+	int score[3]; //score 0:êµ­ì–´, 1:ì˜ì–´, 2:ìˆ˜í•™
 	float avg;
 }STUDENT;
 
@@ -29,7 +29,7 @@ void sort_students(STUDENT* s, int size) {
 }
 int main() {
 	STUDENT s[3] = { 0 };
-	printf("3¸íÀÇ ÇÐ»ýÀÇ ÀÌ¸§°ú ¼ºÀûÀ» ÀÔ·ÂÇÏ½Ã¿À>>\n");
+	printf("3ëª…ì˜ í•™ìƒì˜ ì´ë¦„ê³¼ ì„±ì ì„ ìž…ë ¥í•˜ì‹œì˜¤>>\n");
 	for (int i = 0; i < 3; i++) {
 		scanf("%s %3d %3d %3d", s[i].name, &s[i].score[0], &s[i].score[1], &s[i].score[2]);
 	}
@@ -40,14 +40,14 @@ int main() {
 		calculate_avg(&s[0], i);
 	}
 
-	printf("Æò±Õ Á¡¼ö>>\n");
+	printf("í‰ê·  ì ìˆ˜>>\n");
 	for (int i = 0; i < 3; i++) {
 		printf("%.2f\n", s[i].avg);
 	}
 		sort_students(&s[0], 3);
 	
 	for (int i = 0; i < 3; i++) {
-		printf("Á¤·Ä : ÀÌ¸§:%s Æò±Õ:%.2f (±¹:%d,¿µ:%d,¼ö:%d\n)", s[i].name, s[i].avg, s[i].score[0], s[i].score[1], s[i].score[2]);
+		printf("ì •ë ¬ : ì´ë¦„:%s í‰ê· :%.2f (êµ­:%d,ì˜:%d,ìˆ˜:%d\n)", s[i].name, s[i].avg, s[i].score[0], s[i].score[1], s[i].score[2]);
 	}
 
 	
